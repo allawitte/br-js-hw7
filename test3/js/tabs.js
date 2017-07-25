@@ -1,11 +1,11 @@
 const articles = document.querySelectorAll('.tabs-content article');
 const tabsBlock = document.querySelector('.tabs-nav');
-const FIRSTaRTICLE = 0;
+const FIRST_ARTICLE = 0;
 const switchFunctions = [];
-var tab = tabsBlock.firstElementChild.cloneNode();
+const demoTab = tabsBlock.firstElementChild;
+var tab = demoTab.cloneNode();
 
-
-tabsBlock.firstElementChild.remove();
+demoTab.remove();
 
 for (let i = 1; i < articles.length; i++) {
     articles[i].classList.add('hidden');
@@ -17,7 +17,7 @@ for (let i = 0; i < articles.length; i++) {
     a.textContent = articles[i].dataset.tabTitle;
     a.classList.add('fa');
     tab.appendChild(a);
-    if (i === FIRSTaRTICLE) {
+    if (i === FIRST_ARTICLE) {
         tab.classList.add('ui-tabs-active');
     }
     tabsBlock.appendChild(tab);
